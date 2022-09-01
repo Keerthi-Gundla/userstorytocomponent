@@ -1,7 +1,24 @@
-import React from 'react';
+import { Grid } from "@mui/material";
+import React from "react";
+import ButtonComponent from "../atoms/Button";
+import TypographyComponent from "../atoms/Typography";
 
-const KindleSuccessPopup=()=>{
-    return <div>Kindle success popup</div>
+interface KindleSuccessPopupProps {
+  title?: string;
+  subtitle?: string;
+  onClick?: () => {};
 }
+
+const KindleSuccessPopup: React.FC<KindleSuccessPopupProps> = (props) => {
+  const { title, subtitle, onClick } = props;
+
+  return (
+    <Grid>
+      <TypographyComponent>{title}</TypographyComponent>
+      <TypographyComponent>{subtitle}</TypographyComponent>
+      <ButtonComponent onClick={onClick}>Continue reading</ButtonComponent>
+    </Grid>
+  );
+};
 
 export default KindleSuccessPopup;

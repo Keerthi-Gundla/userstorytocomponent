@@ -1,7 +1,15 @@
+import { Grid } from '@mui/material';
 import React from 'react';
 
-const Explore=()=>{
-    return <div>Explore</div>
+interface ExploreProps{
+    exploreData:string
+}
+
+const Explore:React.FC<ExploreProps>=(props)=>{
+
+    const {exploreData}=props;
+
+    return <Grid>{exploreData}</Grid>
 }
 
 export default Explore;

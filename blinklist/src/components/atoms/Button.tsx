@@ -1,7 +1,14 @@
+import { Button, ButtonProps } from '@mui/material';
 import React from 'react';
 
-const Button=()=>{
-    return <div></div>
+interface ButtonComponentProps extends ButtonProps{
+    label?:String
 }
 
-export default Button;
+const ButtonComponent:React.FC<ButtonComponentProps>=(props)=>{
+
+    const {label, ...rest}=props;
+    return <Button  {...rest} >{label}</Button>
+}
+
+export default ButtonComponent;
