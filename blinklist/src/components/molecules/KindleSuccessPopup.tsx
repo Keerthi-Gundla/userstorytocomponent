@@ -6,7 +6,7 @@ import TypographyComponent from "../atoms/Typography";
 interface KindleSuccessPopupProps {
   title?: string;
   subtitle?: string;
-  onClick?: () => {};
+  onClick?: () =>void;
 }
 
 const KindleSuccessPopup: React.FC<KindleSuccessPopupProps> = (props) => {

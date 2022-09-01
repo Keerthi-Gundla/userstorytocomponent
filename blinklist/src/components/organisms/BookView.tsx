@@ -1,9 +1,16 @@
-import { Grid, Tabs, Typography } from "@mui/material";
-import React from "react";
+import { Grid, Modal, Tabs, Typography } from "@mui/material";
+import React, { useState } from "react";
 import BookThumbnail from "../atoms/BookThumbnail";
 import Button from "../atoms/Button";
+import KindleSetup from "./KindleSetup";
 
 const BookView = () => {
+  const [openKindle, setOpenKindle] = useState<boolean>(false);
+
+  const handleReadNow = () => {};
+
+  const handleBuy = () => {};
+
   return (
     <Grid>
       <Grid>
@@ -20,6 +27,10 @@ const BookView = () => {
         <BookThumbnail />
       </Grid>
       <Tabs />
+
+      <Modal open={openKindle}>
+        <KindleSetup subtitle1={""} subtitle2={""} />
+      </Modal>
     </Grid>
   );
 };

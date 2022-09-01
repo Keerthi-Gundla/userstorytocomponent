@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Tab=()=>{
-    return <div>Tabs</div>
-}
+const Tab = () => {
+  return <div>Tabs</div>;
+};
 
 export default Tab;

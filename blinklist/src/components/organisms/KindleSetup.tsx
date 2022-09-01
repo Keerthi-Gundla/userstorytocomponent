@@ -1,7 +1,8 @@
-import { Grid, TextField } from "@mui/material";
-import React from "react";
+import { Grid, Modal, TextField } from "@mui/material";
+import React, { useState } from "react";
 import ButtonComponent from "../atoms/Button";
 import TypographyComponent from "../atoms/Typography";
+import KindleSuccessPopup from "../molecules/KindleSuccessPopup";
 
 interface KindleSetupProps {
   subtitle1: string;
@@ -10,6 +11,12 @@ interface KindleSetupProps {
 
 const KindleSetup: React.FC<KindleSetupProps> = (props) => {
   const { subtitle1, subtitle2 } = props;
+  const [addEmail, setAddEmail] = useState<boolean>(false);
+
+  const handleAddEmail = () => {
+    setAddEmail(true);
+  };
+  const handleContinueReading = () => {};
 
   return (
     <Grid>
@@ -19,8 +26,11 @@ const KindleSetup: React.FC<KindleSetupProps> = (props) => {
         <TextField placeholder="email" />
         <TextField placeholder="@kindle.com" />
       </Grid>
-      <ButtonComponent>Add email</ButtonComponent>
+      <ButtonComponent onClick={handleAddEmail}>Add email</ButtonComponent>
       <TypographyComponent>Need help</TypographyComponent>
+      <Modal open={addEmail}>
+        <KindleSuccessPopup onClick={handleContinueReading} />
+      </Modal>
     </Grid>
   );
 };
