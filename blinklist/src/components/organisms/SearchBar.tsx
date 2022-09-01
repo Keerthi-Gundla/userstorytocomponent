@@ -1,7 +1,19 @@
-import React from 'react';
+import { Grid, TextField } from "@mui/material";
+import React from "react";
 
-const SearchBar=()=>{
-    return <div>Search Bar</div>
+interface SearchBarProps {
+  placeholder?: string;
+  handleChange: () => void;
 }
+
+const SearchBar: React.FC<SearchBarProps> = (props) => {
+  const { placeholder, handleChange } = props;
+
+  return (
+    <Grid>
+      <TextField placeholder={placeholder} onChange={handleChange} />
+    </Grid>
+  );
+};
 
 export default SearchBar;
