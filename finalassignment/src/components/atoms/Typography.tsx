@@ -4,7 +4,6 @@ import React from 'react';
 import { Typography, TypographyProps } from '@mui/material'
 
 interface TypographyComponentProps extends TypographyProps {
-  children?: string
 }
 
 const TypographyComponent = (props:TypographyComponentProps) => {

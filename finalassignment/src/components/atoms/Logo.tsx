@@ -1,7 +1,15 @@
 import React from 'react';
 
-const Logo=()=>{
-    return <div></div>
+interface LogoProps{
+    source?:string,
+    alt?:string
+}
+
+const Logo:React.FC<LogoProps>=(props)=>{
+
+    const {source,alt}=props;
+
+    return <img src={source} alt={alt}/>
 }
 
 export default Logo;
